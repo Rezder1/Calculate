@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\projects\\Job\\EquipmentCalculatorAPPWF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B4EEBC-F822-4AE2-ABAD-F84F201D1A3B}|EquipmentCalculatorAPPWF.csproj|d:\\projects\\job\\equipmentcalculatorappwf\\equipmentcalculatorappwf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B4EEBC-F822-4AE2-ABAD-F84F201D1A3B}|EquipmentCalculatorAPPWF.csproj|solutionrelative:equipmentcalculatorappwf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B4EEBC-F822-4AE2-ABAD-F84F201D1A3B}|EquipmentCalculatorAPPWF.csproj|D:\\projects\\Job\\EquipmentCalculatorAPPWF\\equipmentcalculatorappwf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A5B4EEBC-F822-4AE2-ABAD-F84F201D1A3B}|EquipmentCalculatorAPPWF.csproj|solutionrelative:equipmentcalculatorappwf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EquipmentCalculatorAPPWF.cs",
+              "DocumentMoniker": "D:\\projects\\Job\\EquipmentCalculatorAPPWF\\EquipmentCalculatorAPPWF.cs",
+              "RelativeDocumentMoniker": "EquipmentCalculatorAPPWF.cs",
+              "ToolTip": "D:\\projects\\Job\\EquipmentCalculatorAPPWF\\EquipmentCalculatorAPPWF.cs",
+              "RelativeToolTip": "EquipmentCalculatorAPPWF.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAwL8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T09:01:56.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EquipmentCalculatorAPPWF.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\projects\\Job\\EquipmentCalculatorAPPWF\\EquipmentCalculatorAPPWF.cs",
+              "RelativeDocumentMoniker": "EquipmentCalculatorAPPWF.cs",
+              "ToolTip": "D:\\projects\\Job\\EquipmentCalculatorAPPWF\\EquipmentCalculatorAPPWF.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "EquipmentCalculatorAPPWF.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T05:31:41.993Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

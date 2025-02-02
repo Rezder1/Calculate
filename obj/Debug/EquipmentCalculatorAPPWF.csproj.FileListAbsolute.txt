@@ -1,0 +1,13 @@
+D:\projects\Job\EquipmentCalculatorAPPWF\bin\Debug\EquipmentCalculatorAPPWF.exe.config
+D:\projects\Job\EquipmentCalculatorAPPWF\bin\Debug\EquipmentCalculatorAPPWF.exe
+D:\projects\Job\EquipmentCalculatorAPPWF\bin\Debug\EquipmentCalculatorAPPWF.pdb
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.csproj.AssemblyReference.cache
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.Properties.Resources.resources
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.csproj.GenerateResource.cache
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.csproj.CoreCompileInputs.cache
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.exe
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.pdb
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\EquipmentCalculatorAPPWF.EquipmentCalculatorAPPWF.resources
+D:\projects\Job\EquipmentCalculatorAPPWF\bin\Debug\Xceed.Document.NET.dll
+D:\projects\Job\EquipmentCalculatorAPPWF\bin\Debug\Xceed.Words.NET.dll
+D:\projects\Job\EquipmentCalculatorAPPWF\obj\Debug\Equipmen.02C4970C.Up2Date
