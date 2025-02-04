@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
-using Xceed.Document.NET;
 using Xceed.Words.NET;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EquipmentCalculatorAPPWF
 {
