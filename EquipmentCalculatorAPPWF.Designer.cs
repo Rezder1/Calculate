@@ -69,7 +69,6 @@
             this.EnterName.Size = new System.Drawing.Size(250, 16);
             this.EnterName.TabIndex = 1;
             this.EnterName.Text = "Введите наименование экскаватора";
-            this.EnterName.Click += new System.EventHandler(this.Label1_Click);
             // 
             // EnteredName
             // 
@@ -79,7 +78,6 @@
             this.EnteredName.Name = "EnteredName";
             this.EnteredName.Size = new System.Drawing.Size(262, 22);
             this.EnteredName.TabIndex = 2;
-            this.EnteredName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -102,7 +100,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(262, 24);
             this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.СomboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -113,7 +110,6 @@
             this.label1.Size = new System.Drawing.Size(160, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Выберите объём ковша";
-            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // CycleTime
             // 
@@ -123,7 +119,6 @@
             this.CycleTime.Name = "CycleTime";
             this.CycleTime.Size = new System.Drawing.Size(262, 22);
             this.CycleTime.TabIndex = 5;
-            this.CycleTime.TextChanged += new System.EventHandler(this.TextBox1_TextChanged_1);
             this.CycleTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CycleTime_KeyPress);
             // 
             // WorkingDays
@@ -134,7 +129,6 @@
             this.WorkingDays.Name = "WorkingDays";
             this.WorkingDays.Size = new System.Drawing.Size(262, 22);
             this.WorkingDays.TabIndex = 6;
-            this.WorkingDays.TextChanged += new System.EventHandler(this.WorkingDays_TextChanged);
             this.WorkingDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WorkingDays_KeyPress);
             // 
             // Cycle
@@ -147,7 +141,6 @@
             this.Cycle.Size = new System.Drawing.Size(222, 16);
             this.Cycle.TabIndex = 7;
             this.Cycle.Text = "Введите время цикла в секундах";
-            this.Cycle.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label2
             // 
@@ -158,7 +151,6 @@
             this.label2.Size = new System.Drawing.Size(228, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Введите кол рабочих дней в году ";
-            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // EfficiencyFactor
             // 
@@ -168,7 +160,6 @@
             this.EfficiencyFactor.Name = "EfficiencyFactor";
             this.EfficiencyFactor.Size = new System.Drawing.Size(262, 22);
             this.EfficiencyFactor.TabIndex = 9;
-            this.EfficiencyFactor.TextChanged += new System.EventHandler(this.TextBox1_TextChanged_2);
             this.EfficiencyFactor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EfficiencyFactor_KeyPress);
             // 
             // KPI
@@ -180,7 +171,6 @@
             this.KPI.Size = new System.Drawing.Size(226, 16);
             this.KPI.TabIndex = 10;
             this.KPI.Text = "Введите КПИ с точность до сотых";
-            this.KPI.Click += new System.EventHandler(this.Label3_Click);
             // 
             // VorkValue
             // 
@@ -276,7 +266,6 @@
             this.Controls.Add(this.UploadButton);
             this.Name = "EquipmentCalculatorAPPWF";
             this.Text = "Калькулятор количества оборудования";
-            this.Load += new System.EventHandler(this.EquipmentCalculatorAPPWF_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -22,157 +22,95 @@ namespace EquipmentCalculatorAPPWF
             InitializeComponent();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void СomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void CycleTime_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Проверка, является ли введенный символ цифрой или является ли это клавишей Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Отменяем ввод, если символ не является цифрой
-            }
-        }
-
-        private void WorkingDays_TextChanged(object sender, EventArgs e)
-        {
-
+            ValidateNumericInput(e);
         }
 
         private void WorkingDays_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Проверка, является ли введенный символ цифрой или является ли это клавишей Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Отменяем ввод, если символ не является цифрой
-            }
-        }
-
-        private void Label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged_2(object sender, EventArgs e)
-        {
-
+            ValidateNumericInput(e);
         }
 
         private void EfficiencyFactor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Проверка, является ли введенный символ цифрой, точкой или клавишей Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true; // Отменяем ввод, если символ не является цифрой или точкой
-            }
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EquipmentCalculatorAPPWF_Load(object sender, EventArgs e)
-        {
-
+            ValidateDecimalInput(e);
         }
 
         private void WorkValueBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Проверка, является ли введенный символ цифрой, точкой или клавишей Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            ValidateDecimalInput(e);
+        }
+
+        private void ValidateNumericInput(KeyPressEventArgs e) // Метод для проверки ввода в текстовое поле
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Отменяем ввод, если символ не является цифрой или точкой
+                e.Handled = true;
             }
         }
 
-        //Вывод введённых данных в переменные
-        private void Button1_Click(object sender, EventArgs e)
+        private void ValidateDecimalInput(KeyPressEventArgs e) // Метод для проверки в числовое поле
         {
-            string Name1 = EnteredName.Text;
-            string BucketVolume = comboBox1.Text;
-            string CycleTime1 = CycleTime.Text;
-            string Days = WorkingDays.Text;
-            string KPI = EfficiencyFactor.Text;
-            string WorkValue = WorkValueBox.Text;
-
-            int Bucket = Convert.ToInt32(BucketVolume);
-            int Cycle = Convert.ToInt32(CycleTime1);
-            int Day = Convert.ToInt32(Days);
-            decimal KfPI;
-            if (decimal.TryParse(KPI, NumberStyles.Any, CultureInfo.InvariantCulture, out KfPI))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
+                e.Handled = true;
             }
-            ;
-            int WorkV= Convert.ToInt32(WorkValue);
+        }
 
-            decimal result1 = Bucket * (86400 / Cycle) * Day * KfPI;
-            decimal NumberOfExcavators = WorkV / result1;
+        private (int bucket, int cycle, int day, decimal kfPI, int workValue) GetInputValues() // Метод собирает введённые данные и преобразует их в в цифровые
+        {
+            int bucket = Convert.ToInt32(comboBox1.Text);
+            int cycle = Convert.ToInt32(CycleTime.Text);
+            int day = Convert.ToInt32(WorkingDays.Text);
+            decimal kfPI = decimal.TryParse(EfficiencyFactor.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal temp) ? temp : 0;
+            int workValue = Convert.ToInt32(WorkValueBox.Text);
 
-            Result.Text = $"{Name1} / {result1} / {NumberOfExcavators}";
+            return (bucket, cycle, day, kfPI, workValue);
+        }
+
+        private void Button1_Click(object sender, EventArgs e) // Создание кнопки вывода результата на экран
+        {
+            var (bucket, cycle, day, kfPI, workValue) = GetInputValues();
+            CalculateAndDisplayResults(bucket, cycle, day, kfPI, workValue);
         }
 
         private void UploadButton_Click(object sender, EventArgs e)
         {
-            // Получение данных
-            string Name1 = EnteredName.Text;
-            string BucketVolume = comboBox1.Text;
-            string CycleTime1 = CycleTime.Text;
-            string Days = WorkingDays.Text;
-            string KPI = EfficiencyFactor.Text;
-            string WorkValue = WorkValueBox.Text;
+            var (bucket, cycle, day, kfPI, workValue) = GetInputValues();
+            decimal result1 = CalculateResult(bucket, cycle, day, kfPI);
+            decimal numberOfExcavators = CalculateNumberOfExcavators(workValue, result1);
 
-            int Bucket = Convert.ToInt32(BucketVolume);
-            int Cycle = Convert.ToInt32(CycleTime1);
-            int Day = Convert.ToInt32(Days);
-            decimal KfPI;
-            if (decimal.TryParse(KPI, NumberStyles.Any, CultureInfo.InvariantCulture, out KfPI))
-            {
-            }
-            ;
-            int WorkV = Convert.ToInt32(WorkValue);
-
-            decimal result1 = Bucket * (86400 / Cycle) * Day * KfPI;
-            decimal NumberOfExcavators = WorkV / result1;
-
-            string a1 = result1.ToString();
-            string a2 = NumberOfExcavators.ToString();
-
-            // Проверка, указан ли путь для сохранения
             if (string.IsNullOrEmpty(FilePath.Text))
             {
                 MessageBox.Show("Пожалуйста, выберите путь для сохранения документа.");
                 return;
             }
 
-            // Создание документа
+            CreateDocument(result1, numberOfExcavators);
+            MessageBox.Show("Документ успешно создан");
+        }
+
+        private decimal CalculateResult(int bucket, int cycle, int day, decimal kfPI) //Метод для выполнения расчётов производительности
+        {
+            return bucket * (86400 / cycle) * day * kfPI;
+        }
+
+        private decimal CalculateNumberOfExcavators(int workValue, decimal result1) // Метод для выполнения расчётов количества
+        {
+            return workValue / result1;
+        }
+
+        private void CalculateAndDisplayResults(int bucket, int cycle, int day, decimal kfPI, int workValue) // Метод отвечающий за расчёты и отображение результатов в форме
+        {
+            decimal result1 = CalculateResult(bucket, cycle, day, kfPI);
+            decimal numberOfExcavators = CalculateNumberOfExcavators(workValue, result1);
+
+            Result.Text = $"{EnteredName.Text} / {result1} / {numberOfExcavators}";
+        }
+
+        private void CreateDocument(decimal result1, decimal numberOfExcavators) // Метод создания и сохранение документа 
+        {
             using (var document = DocX.Create(FilePath.Text))
             {
                 document.InsertParagraph("Данные по экскаватору").FontSize(20).Bold().SpacingAfter(20);
@@ -181,22 +119,20 @@ namespace EquipmentCalculatorAPPWF
                 table.Rows[0].Cells[0].Paragraphs[0].Append("Наименование показателя");
                 table.Rows[0].Cells[1].Paragraphs[0].Append("Значение");
 
-                table.Rows[1].Cells[0].Paragraphs[0].Append("Модель эскаватора");
-                table.Rows[1].Cells[1].Paragraphs[0].Append(Name1);
+                table.Rows[1].Cells[0].Paragraphs[0].Append("Модель экскаватора");
+                table.Rows[1].Cells[1].Paragraphs[0].Append(EnteredName.Text);
 
                 table.Rows[2].Cells[0].Paragraphs[0].Append("Производительность, тыс. м³/год");
-                table.Rows[2].Cells[1].Paragraphs[0].Append(a1);
+                table.Rows[2].Cells[1].Paragraphs[0].Append(result1.ToString());
 
                 table.Rows[3].Cells[0].Paragraphs[0].Append("Объем работ, тыс. м³");
-                table.Rows[3].Cells[1].Paragraphs[0].Append(WorkValue);
+                table.Rows[3].Cells[1].Paragraphs[0].Append(WorkValueBox.Text);
 
                 table.Rows[4].Cells[0].Paragraphs[0].Append("Количество, шт.");
-                table.Rows[4].Cells[1].Paragraphs[0].Append(a2);
+                table.Rows[4].Cells[1].Paragraphs[0].Append(numberOfExcavators.ToString());
 
                 document.Save();
             }
-
-            MessageBox.Show("Документ успешно создан");
         }
 
         private void ButtonBrowse_Click(object sender, EventArgs e)
